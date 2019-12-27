@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-void main() => runApp(MyApp());
+void main() {
+
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Resmi R Nair Fashion Calender 2020',
       theme: ThemeData(
-  
+
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Fashion Calender 2020'),
@@ -28,7 +34,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+
 
  
 
@@ -36,15 +42,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(
-
-        title: Text(widget.title),
-      ),
+//      appBar: AppBar(
+//
+//        title: Text(widget.title),
+//      ),
       body: Center(
 
         child: Text('Data'),
       ),
-     // This trailing comma makes auto-formatting nicer for build methods.
+
     );
   }
 }
