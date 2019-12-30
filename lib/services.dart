@@ -1,5 +1,5 @@
-import 'package:calender2020/appdata.dart';
-import 'package:calender2020/db/database_helper.dart';
+import 'package:calendar2020/appdata.dart';
+import 'package:calendar2020/db/database_helper.dart';
 import 'package:intl/intl.dart';
 
 class Services {

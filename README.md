@@ -1,6 +1,6 @@
-# calender2020
+# calendar2020
 
-Resmi R Nair Fashion Calender 2020
+Resmi R Nair Fashion calendar 2020
 
 ## Getting Started
 

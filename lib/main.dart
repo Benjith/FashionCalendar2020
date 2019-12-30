@@ -1,6 +1,6 @@
-import 'package:calender2020/appdata.dart';
-import 'package:calender2020/services.dart';
-import 'package:calender2020/widgets.dart/calender_view.dart';
+import 'package:calendar2020/appdata.dart';
+import 'package:calendar2020/services.dart';
+import 'package:calendar2020/widgets.dart/calender_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -26,11 +26,11 @@ class MyApp extends StatelessWidget {
     SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Resmi R Nair Fashion Calender 2020',
+      title: 'Resmi R Nair Fashion calendar 2020',
       theme: ThemeData(
           // primarySwatch: Colors.lightBlue,
           brightness: Brightness.dark),
-      home: MyHomePage(title: 'Fashion Calender 2020'),
+      home: MyHomePage(title: 'Fashion calendar 2020'),
     );
   }
 }
@@ -52,7 +52,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
-  double _calenderOpacity = 0.50;
+  double _calendarOpacity = 0.50;
   double _bgOpacity = 0.50;
   int tabIndex = 0;
 
@@ -60,18 +60,18 @@ class _MyHomePageState extends State<MyHomePage>
     return TabBarView(
       controller: _tabController,
       children: <Widget>[
-        CalenderView(AppData.jan),
-        CalenderView(AppData.feb),
-        CalenderView(AppData.mar),
-        CalenderView(AppData.apr),
-        CalenderView(AppData.may),
-        CalenderView(AppData.jun),
-        CalenderView(AppData.jul),
-        CalenderView(AppData.aug),
-        CalenderView(AppData.sep),
-        CalenderView(AppData.oct),
-        CalenderView(AppData.nov),
-        CalenderView(AppData.dec),
+        CalendarView(AppData.jan,1),
+        CalendarView(AppData.feb,2),
+        CalendarView(AppData.mar,3),
+        CalendarView(AppData.apr,4),
+        CalendarView(AppData.may,5),
+        CalendarView(AppData.jun,6),
+        CalendarView(AppData.jul,7),
+        CalendarView(AppData.aug,8),
+        CalendarView(AppData.sep,9),
+        CalendarView(AppData.oct,10),
+        CalendarView(AppData.nov,11),
+        CalendarView(AppData.dec,12),
       ],
     );
   }
@@ -206,7 +206,7 @@ class _MyHomePageState extends State<MyHomePage>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(vsync: this, length: 12);
+    _tabController = TabController(vsync: this, length: 12,initialIndex: widget._initialIndex);
 
     _tabController.addListener(() {
       setState(() {
@@ -239,10 +239,10 @@ class _MyHomePageState extends State<MyHomePage>
               opacity: _bgOpacity,
               child: _bGContainer(),
             ),
-            // calender
+            // calendar
             AnimatedOpacity(
               duration: Duration(seconds: 2),
-              opacity: _calenderOpacity,
+              opacity: _calendarOpacity,
               child: SafeArea(
                 child: Column(
                   children: <Widget>[
@@ -271,11 +271,11 @@ class _MyHomePageState extends State<MyHomePage>
                           activeColor: Colors.blue[100],
                           onChanged: (val) {
                             setState(() {
-                              _calenderOpacity = val;
-                              _bgOpacity = 1.0 - _calenderOpacity;
+                              _calendarOpacity = val;
+                              _bgOpacity = 1.0 - _calendarOpacity;
                             });
                           },
-                          value: _calenderOpacity,
+                          value: _calendarOpacity,
                           min: 0.0,
                           max: 1.0,
                         ),

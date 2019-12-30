@@ -1,5 +1,5 @@
-import 'package:calender2020/services.dart';
-import 'package:calender2020/widgets.dart/AddNote.dart';
+import 'package:calendar2020/services.dart';
+import 'package:calendar2020/widgets.dart/AddNote.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -49,7 +49,7 @@ class _ListAllNotesState extends State<ListAllNotes> {
             '${_date.day} ${DateFormat("EEEE").format(_date)}',
             style: TextStyle(fontSize: 26, color: Colors.black54),
           ),
-          trailing: IconButton(
+          trailing: (_date.isAfter(DateTime.now()))? IconButton(
             tooltip: 'Create new note',
             onPressed: () async {
               await Navigator.push(context,
@@ -60,7 +60,7 @@ class _ListAllNotesState extends State<ListAllNotes> {
               Icons.add,
               color: Colors.black,
             ),
-          ),
+          ):Container(),
         ),
         isLoading == true
             ? CircularProgressIndicator()

@@ -1,4 +1,4 @@
-import 'package:calender2020/appdata.dart';
+import 'package:calendar2020/appdata.dart';
 import 'package:flutter/material.dart';
 
 class DayBuilder extends StatelessWidget {
@@ -12,9 +12,7 @@ class DayBuilder extends StatelessWidget {
       fontSize: 32,
       fontWeight:
           AppData.noteDates.contains(date) ? FontWeight.bold : FontWeight.w200,
-      color: (today.year == date.year && today.month == date.month)
-          ? Colors.white
-          : Colors.white30);
+      color: isActive ? Colors.white : Colors.white30);
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -6,14 +6,15 @@ import 'day_builder.dart';
 import 'day_name_builder.dart';
 import 'list_all_notes.dart';
 
-class CalenderView extends StatefulWidget {
-  CalenderView(this.dates);
+class CalendarView extends StatefulWidget {
+  CalendarView(this.dates,this.monthID);
   final List dates;
+  final int monthID;
   @override
-  _CalenderViewState createState() => _CalenderViewState();
+  _calendarViewState createState() => _calendarViewState();
 }
 
-class _CalenderViewState extends State<CalenderView> {
+class _calendarViewState extends State<CalendarView> {
  ViewState _viewMode = ViewState.blank;
 
   DateTime selectedDate;
@@ -25,7 +26,7 @@ class _CalenderViewState extends State<CalenderView> {
           Expanded(
             child: InkWell(
               onTap: () {
-                if (day.isAfter(DateTime.now())) {
+                // if (day.isAfter(DateTime.now())) {
                   print('day is okay');
                   selectedDate = day;
                   setState(() {
@@ -33,11 +34,11 @@ class _CalenderViewState extends State<CalenderView> {
                         ? ViewState.blank
                         : ViewState.showList;
                   });
-                }
+                // }
               },
               child: DayBuilder(
                 date: day,
-                isActive: day.day > DateTime.now().day ? true : false,
+                isActive: widget.monthID == day.month ? true : false,
                 isHoliday: day.weekday == DateTime.sunday ? true : false,
               ),
             ),

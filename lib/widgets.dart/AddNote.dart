@@ -1,4 +1,4 @@
-import 'package:calender2020/services.dart';
+import 'package:calendar2020/services.dart';
 import 'package:flutter/material.dart';
 
 class AddNote extends StatelessWidget {

@@ -6,7 +6,7 @@ class AppData {
   static String fbURL = 'https://www.facebook.com/resmirnairofficial/';
   static String paetron = 'https://www.patreon.com/resmirnair/';
   static String insta = 'https://www.instagram.com/sunnyleone/?hl=en';
-  //dates of notes, shown as bold in calender view
+  //dates of notes, shown as bold in calendar view
   static List<DateTime> noteDates = [];
   //names of months
   static List<String> monthsName = [

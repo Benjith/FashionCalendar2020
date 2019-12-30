@@ -1,4 +1,4 @@
-package com.resmirnair.calender2020
+package com.resmirnair.calendar2020
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
